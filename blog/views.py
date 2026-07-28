@@ -60,8 +60,7 @@ def post_draft_list(request):
 @login_required
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    if request.method=='POST':
-        post.publish()
+    post.publish()
     return redirect('post_detail', pk=pk)
 
 @login_required
